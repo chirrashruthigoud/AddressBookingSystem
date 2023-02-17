@@ -4,11 +4,10 @@
     {
         public static void Main(string[] args)
         {
-            EditAddress c1 = new EditAddress();
-            String[] names = { "Shruthi", "Sunny", "Pooja", "Dharani" };
+            DeleteContacts c1 = new DeleteContacts();
+            String[] names = { "Shruthi", "Sunny", "Chinnu", "Siri" };
             c1.change(names);
         }
     }
-    
 }
 
