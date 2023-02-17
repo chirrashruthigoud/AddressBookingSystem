@@ -4,8 +4,22 @@
     {
         public static void Main(string[] args)
         {
-             CreateContacts c1 = new CreateContacts ("Shruthi", "Chirra", "papa@gmail.com", "thrikacolony", "Regonda", "AP" ,440023, 845967123);
+            Console.WriteLine("Welcome to AddressBook Program ");
+
+            Console.WriteLine("Add Personal Details : firstname, lastname, email, address, city, state, pincode, phone");
+            string FirstName = Console.ReadLine();
+            string LastName = Console.ReadLine();
+            string Email = Console.ReadLine();
+            string Address = Console.ReadLine();
+            string City = Console.ReadLine();
+            string State = Console.ReadLine();
+            string Pincode = Console.ReadLine();
+            string Phone = Console.ReadLine();
+
+            AddAddress c1 = new AddAddress(FirstName, LastName, Email, Address, City, State, Pincode, Phone);
+
         }
     }
+    
 }
 
