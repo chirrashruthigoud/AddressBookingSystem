@@ -5,6 +5,7 @@
         public static void Main(string[] args)
         {
             AddressBookMain.AddContact();
+            AddressBookMain.Display();
         }
     }
 }
