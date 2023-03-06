@@ -15,12 +15,9 @@ namespace AddressBookSystem
             Person newEntry1 = new Person { firstName = "Shruthi", lastName = "chirra", city = "jagar", state = "warangal", zipcode = "75463", country = "India", phone = "25874963", email = "sunny@gmail.com" };
             if (people.Any(e => e.city == newEntry1.city || e.state == newEntry1.state))
             {
-                Console.WriteLine("Multiple Person in same state and same city" + " Name : " + newEntry1.firstName + ", State : " + newEntry1.state + ", City : " + newEntry1.city);
+                Console.WriteLine("Contact" + newEntry1.phone);
             }
-            else
-            {
-                people.Add(newEntry1);
-            }
+           
 
         }
     }
