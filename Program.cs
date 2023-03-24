@@ -29,7 +29,8 @@ namespace AddressBookSystem
                     "10.ViewPersonByCityOrStateInDictionaryAB\n" +
                     "11.GetNumberOfContactPersonsThatIsCounrByCityOrStateInList\n" +
                     "12.SortEntriesInAddressBookByPersonsNameInList\n" +
-                      "13.SortPersonByCityStateOrZipInList\n" +
+                    "13.SortPersonByCityStateOrZipInList\n" +
+                    "14.ReadOrWritePersonsContactIntoFileUsingFileIO\n" +
                     "17.Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -86,6 +87,11 @@ namespace AddressBookSystem
                         AddressBookMain.SortPersonByCityStateOrZip();
                         Console.Clear();
                         break;
+                    case 14:
+                        Console.WriteLine("Details of Persons In Address Book:\n-----------------------------------------------");
+                        AddressBookMain.ReadWritePersonContactsByUsingFileIO();
+                        Console.Clear();
+                        break;
                     case 17:
                         Console.Clear();
                         Console.ReadLine();
@@ -96,7 +102,6 @@ namespace AddressBookSystem
                         break;
                 }
             }
-
         }
     }
 }
