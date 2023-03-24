@@ -16,16 +16,27 @@ namespace AddressBookSystem
             {
                 Console.WriteLine(n[i]);
             }
-            Console.Write("If You Want to Edit Array Type Index Value : ");
+            Console.WriteLine("Enter the index Value to Delete : ");
             int index = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter the Name : ");
+            Console.Write("Enter the name which you want to delete : ");
             String name = Console.ReadLine();
-            n[index] = name;
-            Console.Write(n[index] = name);
+            if (n[index] == name)
+            {
+                n[index] = " ";
+            }
+
+            Console.Write("After Deleted Array :" + "");
 
             for (int j = 0; j < n.Length; j++)
             {
-                Console.WriteLine("Updated Array : " + n[j]);
+                if (n[j] == "")
+                {
+                    continue;
+                }
+                else
+                {
+                    Console.Write(n[j] + " ");
+                }
             }
 
         }
