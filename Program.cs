@@ -12,16 +12,91 @@ namespace AddressBookSystem
         public static void Main(string[] args)
         {
             List<Person> people = new List<Person>();
-            people.Add(new Person { firstName = "shruthi", lastName = "guntuku", city = "hnk", state = "AP", zipcode = "258741", country = "India", phone = "369852147", email = "JIhu@gmail.com" });
-            people.Add(new Person { firstName = "siri", lastName = "guntuku", city = "hnk", state = "AP", zipcode = "258741", country = "India", phone = "369852147", email = "JIhu@gmail.com" });
-            people.Add(new Person { firstName = "sunny", lastName = "guntuku", city = "hnk", state = "AP", zipcode = "258741", country = "India", phone = "369852147", email = "JIhu@gmail.com" });
-
-
-            Person newEntry1 = new Person { firstName = "shruthi", lastName = "guntuku", city = "hnk", state = "AP", zipcode = "258741", country = "India", phone = "369852147", email = "JIhu@gmail.com" };
-            if (people.Any(e => e.city == newEntry1.city || e.state == newEntry1.state))
+            Console.WriteLine("*****----Welcome to Address Book Program----*****\n");
+            bool flag = true;
+            while (flag)
             {
-                Console.WriteLine(" Contact " + newEntry1.phone);
+                Console.WriteLine("Please select given options:---\n--------------------");
+                Console.WriteLine("1.AddContacts\n" +
+                    "2.DisplayDetails\n" +
+                    "3.EditPersonDetails\n" +
+                    "4.DeletePersonByUsingPersonName\n" +
+                    "5.AddMultiplePerson\n" +
+                    "6.CreateDictionaryContacts\n" +
+                    "7.DisplayDictionaryList\n" +
+                    "8.CheckDuplicateEntryOfSamePersonByPersonNameInList\n" +
+                    "9.SearchPersonByCityOrStateInDictionaryAB\n" +
+                    "10.ViewPersonByCityOrStateInDictionaryAB\n" +
+                    "11.GetNumberOfContactPersonsThatIsCounrByCityOrStateInList\n" +
+                    "12.SortEntriesInAddressBookByPersonsNameInList\n" +
+                      "13.SortPersonByCityStateOrZipInList\n" +
+                    "17.Exit\n");
+                int option = Convert.ToInt32(Console.ReadLine());
+                switch (option)
+                {
+                    case 1:
+                        AddressBookMain.AddContacts();
+                        Console.Clear();
+                        break;
+                    case 2:
+                        AddressBookMain.DisplayDetails();
+                        Console.Clear();
+                        break;
+                    case 3:
+                        AddressBookMain.EditPersonDetails();
+                        Console.Clear();
+                        break;
+                    case 4:
+                        AddressBookMain.DeletePersonByUsingPersonName();
+                        Console.Clear();
+                        break;
+                    case 5:
+                        AddressBookMain.AddMultiplePerson();
+                        Console.Clear();
+                        break;
+                    case 6:
+                        AddressBookMain.CreateDictionaryContacts();
+                        Console.Clear();
+                        break;
+                    case 7:
+                        AddressBookMain.DisplayDictionaryList();
+                        Console.Clear();
+                        break;
+                    case 8:
+                        AddressBookMain.CheckDuplicateEntryOfSamePersonByName();
+                        Console.Clear();
+                        break;
+                    case 9:
+                        AddressBookMain.SearchPersonByCityOrState();
+                        Console.Clear();
+                        break;
+                    case 10:
+                        AddressBookMain.ViewPersonByCityOrState();
+                        Console.Clear();
+                        break;
+                    case 11:
+                        AddressBookMain.CountCityOrState();
+                        Console.Clear();
+                        break;
+                    case 12:
+                        AddressBookMain.SortPersonsName();
+                        Console.Clear();
+                        break;
+                    case 13:
+                        AddressBookMain.SortPersonByCityStateOrZip();
+                        Console.Clear();
+                        break;
+                    case 17:
+                        Console.Clear();
+                        Console.ReadLine();
+                        break;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Select only give options");
+                        break;
+                }
             }
+
         }
     }
 }
