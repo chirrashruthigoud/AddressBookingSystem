@@ -8,35 +8,26 @@ namespace AddressBookSystem
 {
     public class CreateContact
     {
-        public string FirstName;
-        public string LastName;
-        public string Email;
-        public string Address;
-        public string City;
-        public int Pincode;
-        public int Phone;
-        public string State;
-        public CreateContact(string fname, string lname, string email, string address, string city, string state, int pincode, int phone)
+
+        public String name;
+        public void change(String[] n)
         {
-            this.FirstName = fname;
-            this.LastName = lname;
-            this.Email = email;
-            this.Address = address;
-            this.City = city;
-            this.Pincode = pincode;
-            this.Phone = phone;
-            this.State = state;
-            Console.WriteLine("First Name : " + FirstName);
-            Console.WriteLine("Last Name : " + LastName);
-            Console.WriteLine("Email : " + Email);
-            Console.WriteLine("Address : " + Address);
-            Console.WriteLine("City Name : " + City);
-            Console.WriteLine("Pincode : " + Pincode);
-            Console.WriteLine("Phone Number : " + Phone);
-            Console.WriteLine("State : " + State);
+            for (int i = 0; i < n.Length; i++)
+            {
+                Console.WriteLine(n[i]);
+            }
+            Console.Write("If You Want to Edit Array Type Index Value : ");
+            int index = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter the Name : ");
+            String name = Console.ReadLine();
+            n[index] = name;
+            Console.Write(n[index] = name);
+
+            for (int j = 0; j < n.Length; j++)
+            {
+                Console.WriteLine("Updated Array : " + n[j]);
+            }
 
         }
-
-
     }
 }
