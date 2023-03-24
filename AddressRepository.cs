@@ -4,12 +4,14 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+
 
 namespace AddressBookingSystem
 {
     public class AddressRepository
     {
-        public static string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=AddressBookService;Integrated Security=True;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public static string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=payroll_service257;Integrated Security=True";
         public static SqlConnection sqlConnection = null;
         public static Contact model = new Contact();
         public List<PersonContactsThread> contactsDetailsListThread = new List<PersonContactsThread>();
@@ -54,7 +56,7 @@ namespace AddressBookingSystem
         /// UC17-Update contacts 
         /// </summary>
         /// <param name="model"></param>
-        public static void UpdateContacts(Contacts model)
+        public static void UpdateContacts(Contact model)
         {
             try
             {
@@ -79,6 +81,43 @@ namespace AddressBookingSystem
                 sqlConnection.Close();
             }
         }
-
+        /// <summary>
+        /// UC18-Ability to contacts at a particular date
+        /// </summary>
+        /// <param name="model"></param>
+        public static void RetrieveParticularDate(Contact model)
+        {
+            try
+            {
+                sqlConnection = new SqlConnection(connectionString);
+                string query = "select * from AddressBook where StartDate between cast('2019-01-01' as date ) AND GETDATE();";
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        model.firstName = reader["firstName"] == DBNull.Value ? default : reader["firstName"].ToString();
+                        model.lastName = reader["lastName"] == DBNull.Value ? default : reader["lastName"].ToString();
+                        model.address = reader["address"] == DBNull.Value ? default : reader["address"].ToString();
+                        model.city = reader["city"] == DBNull.Value ? default : reader["city"].ToString();
+                        model.state = reader["state"] == DBNull.Value ? default : reader["state"].ToString();
+                        model.zipcode = Convert.ToInt32(reader["zipcode"] == DBNull.Value ? default : reader["zipcode"]);
+                        model.phoneNumber = Convert.ToInt64(reader["phoneNumber"] == DBNull.Value ? default : reader["phoneNumber"]);
+                        model.email = reader["email"] == DBNull.Value ? default : reader["email"].ToString();
+                        Console.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7}", model.firstName, model.lastName, model.address, model.city, model.state, model.zipcode, model.phoneNumber, model.email);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
     }
 }
