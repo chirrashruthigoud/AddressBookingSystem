@@ -1,0 +1,15 @@
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\bin\Debug\net6.0\AddressBookingSystem.exe
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\bin\Debug\net6.0\AddressBookingSystem.deps.json
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\bin\Debug\net6.0\AddressBookingSystem.runtimeconfig.json
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\bin\Debug\net6.0\AddressBookingSystem.dll
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\bin\Debug\net6.0\AddressBookingSystem.pdb
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\obj\Debug\net6.0\AddressBookingSystem.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\obj\Debug\net6.0\AddressBookingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\obj\Debug\net6.0\AddressBookingSystem.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\obj\Debug\net6.0\AddressBookingSystem.AssemblyInfo.cs
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\obj\Debug\net6.0\AddressBookingSystem.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\obj\Debug\net6.0\AddressBookingSystem.dll
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\obj\Debug\net6.0\refint\AddressBookingSystem.dll
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\obj\Debug\net6.0\AddressBookingSystem.pdb
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\obj\Debug\net6.0\AddressBookingSystem.genruntimeconfig.cache
+C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\obj\Debug\net6.0\ref\AddressBookingSystem.dll
