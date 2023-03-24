@@ -1,6 +1,8 @@
 ﻿using AddressBookingSystem;
 using System;
 using System.Collections.Generic;
+using System.Formats.Asn1;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -446,6 +448,26 @@ namespace AddressBookSystem
             Console.ReadLine();
             Console.WriteLine("Press any key to continue.");
             reader.Close();
+        }
+        /// UC14- Read or Write the Address Book with Persons Contact as CSV File.
+        /// </summary>
+        public static void ReadWritePersonContactsAsCSVFile()
+        {
+            //Write into file
+            string csvFilePath = @"C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\PersonDetailsInCSVFile.csv";
+            StreamWriter writer = new StreamWriter(csvFilePath);
+            CsvWriter csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
+            csvWriter.WriteRecords(Person);
+            writer.Close();
+            //Read from file
+            StreamReader streamReader = new StreamReader(csvFilePath);
+            CultureInfo culture = CultureInfo.InvariantCulture;
+            CsvReader reader = new CsvReader(streamReader, culture);
+            var record = reader.GetRecords<Contact>().ToList();
+            foreach (Contact data in record)
+            {
+                Console.WriteLine("FirstName: " + data.firstName + "    " + "\nLastName: " + data.lastName + "    " + "\nAddress: " + data.address + "    " + "\nCityName: " + data.city + "    " + "\nStateName: " + data.state + "    " + "\nZipCode: " + data.zipcode + "    " + "\nPhoneNumber: " + data.phoneNumber + "    " + "\nEmailId: " + data.email + "\n------------------------------------");
+            }
         }
     }
  
