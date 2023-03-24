@@ -16,6 +16,7 @@ namespace AddressBookSystem
             bool flag = true;
             while (flag)
             {
+
                 Console.WriteLine("Please select given options:---\n--------------------");
                 Console.WriteLine("1.AddContacts\n" +
                     "2.DisplayDetails\n" +
@@ -150,13 +151,13 @@ namespace AddressBookSystem
                         break;
                     case 21:
                         Console.Clear();
-                        contacts.firstName = "Aakansha";
-                        contacts.lastName = "Singh";
-                        contacts.address = "Preet vihar colony";
-                        contacts.city = "Uttarakhand";
+                        contacts.firstName = "sarika";
+                        contacts.lastName = "rajputh";
+                        contacts.address = "vihar colony";
+                        contacts.city = "up";
                         contacts.state = "Dehra Dun";
-                        contacts.zipcode = 232513;
-                        contacts.phoneNumber = 7505982525;
+                        contacts.zipcode = 147852;
+                        contacts.phoneNumber = 257489631;
                         contacts.email = "aakan123@gmail.com";
                         AddressRepository.AddNewContacts(contacts);
                         Console.WriteLine("Retrieve all entites from database after add new contacts\n---------------------------------------------------------- ");
@@ -175,6 +176,7 @@ namespace AddressBookSystem
                         break;
                 }
             }
+
         }
     }
     
