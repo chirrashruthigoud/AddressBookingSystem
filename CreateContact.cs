@@ -38,7 +38,6 @@ namespace AddressBookSystem
                     Console.Write(n[j] + " ");
                 }
             }
-
         }
     }
 }
