@@ -33,7 +33,8 @@ namespace AddressBookSystem
                     "14.ReadOrWritePersonsContactIntoFileUsingFileIO\n" +
                     "15.ReadOrWritePersonsContactAsCSVFile\n" +
                     "16.ReadOrWritePersonsContactAsJsonFile\n" +
-                     "17.Retrieve all entites from database\n" +
+                    "17.Retrieve all entites from database\n" +
+                     "18.Update city by using firstname\n" +
                     "30.Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -120,6 +121,17 @@ namespace AddressBookSystem
                         Console.WriteLine("\nPress any key to continue...");
                         Console.ReadLine();
                         break;
+                    case 18:
+                        Console.Clear();
+                        Contact.firstName = "Anmol";
+                        Contact.city = "Punjab";
+                        AddressRepository.UpdateContacts(Contact);
+                        Console.WriteLine("Details of address book After Update city are\n------------------------------------------------");
+                        AddressRepository.GetAllEntriesFromDB();
+                        Console.ReadLine();
+                        Console.Write("\nPress any key to continue...... ");
+                        Console.Clear();
+                        break;
                     case 30:
                         Console.Clear();
                         Console.ReadLine();
@@ -130,6 +142,7 @@ namespace AddressBookSystem
                         break;
                 }
             }
+
         }
     }
     
