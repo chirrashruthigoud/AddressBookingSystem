@@ -35,7 +35,8 @@ namespace AddressBookSystem
                     "16.ReadOrWritePersonsContactAsJsonFile\n" +
                     "17.Retrieve all entites from database\n" +
                      "18.Update city by using firstname\n" +
-                    "30.Exit\n");
+                    "19.Retrieve contacts add at particular date in address book\n" +
+                     "30.Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -123,11 +124,19 @@ namespace AddressBookSystem
                         break;
                     case 18:
                         Console.Clear();
-                        Contact.firstName = "Anmol";
-                        Contact.city = "Punjab";
-                        AddressRepository.UpdateContacts(Contact);
+                        contacts.firstName = "Anmol";
+                        contacts.city = "Punjab";
+                        AddressRepository.UpdateContacts(contacts);
                         Console.WriteLine("Details of address book After Update city are\n------------------------------------------------");
                         AddressRepository.GetAllEntriesFromDB();
+                        Console.ReadLine();
+                        Console.Write("\nPress any key to continue...... ");
+                        Console.Clear();
+                        break;
+                    case 19:
+                        Console.Clear();
+                        Console.WriteLine("Retrieve by Particular date or state\n-------------------------------------------");
+                        AddressRepository.RetrieveParticularDate(contacts);
                         Console.ReadLine();
                         Console.Write("\nPress any key to continue...... ");
                         Console.Clear();
@@ -142,6 +151,7 @@ namespace AddressBookSystem
                         break;
                 }
             }
+
 
         }
     }
