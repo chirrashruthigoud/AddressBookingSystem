@@ -50,9 +50,6 @@ namespace AddressBookingSystem
 
             }
         }
-
-
-
         public static void DeleteContact(string personName)
         {
             for (int i = 0; i < add.Count; i++)
