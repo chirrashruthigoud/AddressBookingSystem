@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,14 +9,11 @@ namespace AddressBookingSystem
 {
     public class AddressRepository
     {
-        public static string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=AddressBookService;Integrated Security=True;Connect Timeout=20;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public static string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=AddressBookService;Integrated Security=True;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         public static SqlConnection sqlConnection = null;
         public static Contact model = new Contact();
         public List<PersonContactsThread> contactsDetailsListThread = new List<PersonContactsThread>();
 
-        /// <summary>
-        /// UC-16 Retrieve all the Entries from the DB.
-        /// </summary>
         public static void GetAllEntriesFromDB()
         {
             try
@@ -52,5 +50,35 @@ namespace AddressBookingSystem
                 sqlConnection.Close();
             }
         }
+        /// <summary>
+        /// UC17-Update contacts 
+        /// </summary>
+        /// <param name="model"></param>
+        public static void UpdateContacts(Contacts model)
+        {
+            try
+            {
+                sqlConnection = new SqlConnection(connectionString);
+                SqlCommand command = new SqlCommand("dbo.spUpdateInformations", sqlConnection);
+                command.CommandType = CommandType.StoredProcedure;
+                sqlConnection.Open();
+                command.Parameters.AddWithValue("@firstName", model.firstName);
+                command.Parameters.AddWithValue("@City", model.city);
+                int num = command.ExecuteNonQuery();
+                if (num != 0)
+                    Console.WriteLine("City update Successfully......");
+                else
+                    Console.WriteLine("Something went Wrong");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
     }
 }
