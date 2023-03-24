@@ -33,7 +33,8 @@ namespace AddressBookSystem
                     "14.ReadOrWritePersonsContactIntoFileUsingFileIO\n" +
                     "15.ReadOrWritePersonsContactAsCSVFile\n" +
                     "16.ReadOrWritePersonsContactAsJsonFile\n" +
-                    "20.Exit\n");
+                     "17.Retrieve all entites from database\n" +
+                    "30.Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -112,7 +113,14 @@ namespace AddressBookSystem
                         Console.ReadLine();
                         Console.Clear();
                         break;
-                    case 20:
+                    case 17:
+                        Console.Clear();
+                        Console.WriteLine("Retrieve all entites from database\n---------------------------------- ");
+                        AddressRepository.GetAllEntriesFromDB();
+                        Console.WriteLine("\nPress any key to continue...");
+                        Console.ReadLine();
+                        break;
+                    case 30:
                         Console.Clear();
                         Console.ReadLine();
                         break;
