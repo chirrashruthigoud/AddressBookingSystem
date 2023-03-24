@@ -12,5 +12,10 @@ namespace AddressBookSystem
             this.streamReader = streamReader;
             this.culture = culture;
         }
+
+        internal object GetRecords<T>()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

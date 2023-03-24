@@ -31,7 +31,8 @@ namespace AddressBookSystem
                     "12.SortEntriesInAddressBookByPersonsNameInList\n" +
                     "13.SortPersonByCityStateOrZipInList\n" +
                     "14.ReadOrWritePersonsContactIntoFileUsingFileIO\n" +
-                     "15.ReadOrWritePersonsContactAsCSVFile\n" +
+                    "15.ReadOrWritePersonsContactAsCSVFile\n" +
+                    "16.ReadOrWritePersonsContactAsJsonFile\n" +
                     "20.Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -102,6 +103,15 @@ namespace AddressBookSystem
                         Console.ReadLine();
                         Console.Clear();
                         break;
+                    case 16:
+                        Console.Clear();
+                        Console.WriteLine("Data is write in Json file successfully......");
+                        Console.WriteLine("\nNow Reading Details of Persons In Address Book from Json file:\n-----------------------------------------------------------");
+                        AddressBookMain.ReadWritePersonContactsAsJSONFile();
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadLine();
+                        Console.Clear();
+                        break;
                     case 20:
                         Console.Clear();
                         Console.ReadLine();
@@ -112,7 +122,6 @@ namespace AddressBookSystem
                         break;
                 }
             }
-
         }
     }
     

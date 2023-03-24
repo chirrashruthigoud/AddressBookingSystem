@@ -469,6 +469,23 @@ namespace AddressBookSystem
                 Console.WriteLine("FirstName: " + data.firstName + "    " + "\nLastName: " + data.lastName + "    " + "\nAddress: " + data.address + "    " + "\nCityName: " + data.city + "    " + "\nStateName: " + data.state + "    " + "\nZipCode: " + data.zipcode + "    " + "\nPhoneNumber: " + data.phoneNumber + "    " + "\nEmailId: " + data.email + "\n------------------------------------");
             }
         }
+        /// <summary>
+        /// UC15- Read or Write the Address Book with Persons Contact as JSON File.
+        /// </summary>
+        public static void ReadWritePersonContactsAsJSONFile()
+        {
+            //Write into file
+            string jsonFilePath = @"C:\Users\Admin\source\repos\214\AddressBookingSystem\AddressBookingSystem\PersonDetailsInJSONFile.json";
+            string jasonData = JsonConvert.SerializeObject(Person);
+            File.WriteAllText(jsonFilePath, jasonData);
+            //Read from file
+            string jasonData1 = File.ReadAllText(jsonFilePath);
+            List<Contact> list = JsonConvert.DeserializeObject<List<Contact>>(jasonData1);
+            foreach (Contact data in list)
+            {
+                Console.WriteLine("FirstName: " + data.firstName + "    " + "\nLastName: " + data.lastName + "    " + "\nAddress: " + data.address + "    " + "\nCityName: " + data.city + "    " + "\nStateName: " + data.state + "    " + "\nZipCode: " + data.zipcode + "    " + "\nPhoneNumber: " + data.phoneNumber + "    " + "\nEmailId: " + data.email + "\n------------------------------------");
+            }
+        }
     }
  
 }

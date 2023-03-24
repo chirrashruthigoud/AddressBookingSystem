@@ -1,12 +1,24 @@
 [
-    {
-      "firstName": "siri",
-      "lastName": "goud",
-      "address": "saras",
-      "city": "kk",
-      "state": "s",
-      "zipcode": 52535,
-      "phoneNumber": 1145255,
-      "email": "ss"
-    }
+  {
+    "firstName": "siri",
+    "lastName": "goud",
+    "address": "saras",
+    "city": "kk",
+    "state": "s",
+    "zipcode": 52535,
+    "phoneNumber": 1145255,
+    "email": "ss"
+  },
+  {
+    "firstName": "Riya",
+    "lastName": "Sharma",
+    "address": "Murari nagar ",
+    "city": "Khurja",
+    "state": "Uttar Pradesh ",
+    "zipcode": 215487,
+    "phoneNumber": 7805982524,
+    "email": "riya147@gmail.com"
+  }
+]
+
   ]
