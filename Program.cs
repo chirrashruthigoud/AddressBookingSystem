@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AddressBookingSystem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,8 @@ namespace AddressBookSystem
     {
         public static void Main(string[] args)
         {
-            CreateContact c1 = new CreateContact();
-            String[] names = { "shruthi", "chinnu", "sunny", "pooja" };
-            c1.change(names);
+            AddressBookMain.AddContact();
+
         }
     }
 }
