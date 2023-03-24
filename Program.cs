@@ -31,7 +31,8 @@ namespace AddressBookSystem
                     "12.SortEntriesInAddressBookByPersonsNameInList\n" +
                     "13.SortPersonByCityStateOrZipInList\n" +
                     "14.ReadOrWritePersonsContactIntoFileUsingFileIO\n" +
-                    "17.Exit\n");
+                     "15.ReadOrWritePersonsContactAsCSVFile\n" +
+                    "20.Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -92,7 +93,16 @@ namespace AddressBookSystem
                         AddressBookMain.ReadWritePersonContactsByUsingFileIO();
                         Console.Clear();
                         break;
-                    case 17:
+                    case 15:
+                        Console.Clear();
+                        Console.WriteLine("Data is write in Csv file successfully......");
+                        Console.WriteLine("\nNow Reading Details of Persons In Address Book from csv file:\n-----------------------------------------------------------");
+                        AddressBookMain.ReadWritePersonContactsAsCSVFile();
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadLine();
+                        Console.Clear();
+                        break;
+                    case 20:
                         Console.Clear();
                         Console.ReadLine();
                         break;
@@ -102,6 +112,8 @@ namespace AddressBookSystem
                         break;
                 }
             }
+
         }
     }
+    
 }
